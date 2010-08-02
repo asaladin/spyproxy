@@ -19,7 +19,6 @@ class SpyProxy(object):
       logfile = object.__getattribute__(self, "logfile")
       attribute = getattr(object.__getattribute__(self, "instance"), attrname)
       attributetype = type(attribute)
-      print type(attribute)
       if callable(attribute):
           decorator = object.__getattribute__(self, "_logmethod")
           attribute = decorator(attribute, attrname)
